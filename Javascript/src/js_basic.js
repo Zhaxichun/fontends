@@ -81,3 +81,60 @@ var o = {
     return -1;
   }
 };
+
+console.log("+'01' is: " + s1);
+console.log("+'z' is: " + s3);
+console.log("+'o' is: " + o);
+
+///////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////
+// 语句
+
+//if语句
+var i;
+if (i > 25) {
+  console.log('Greater then 25');
+} else {
+  console.log('Less or equal to 25');
+}
+
+// do...while 语句
+
+// do {
+//   statement;
+// } while (condition);
+
+// for in 语句
+
+var list = [1,2,3,4,5,6];
+for (var i in list.reverse()){
+  console.log(list[i]);
+}
+
+// label 语句
+
+start: for (var i = 0; i < 10; i++){
+  console.log(i)
+}
+
+// break & continue.
+
+var num = 0;
+
+for (var index = 1; index < 10; index++) {
+  if (index % 5 == 0) {
+    break;
+  }
+  num++;
+}
+console.log(num);
+
+num=0;
+for (var index = 1; index < 10; index++) {
+  if (index % 5 == 0) {
+    continue;
+  }
+  num++;
+}
+console.log(num);

@@ -58,6 +58,68 @@ a = -num;
 
 ---
 
+- if 语句
+> 
+~~~ javascript
+ if (condition) statement1 else statement2
+ // condition 可以是任意表达式，而且结果可以不是布尔值， ECMAScript 会自动调用 Boolean() 转换函数转换为布尔值。
+~~~
+
+- do-while
+
+~~~ javascript
+do{
+    statement;
+} while (expression);
+// 在对条件表达式求值之前，循环体内的代码至少会被执行一次.
+~~~
+
+- while
+
+~~~ javascript
+var i = 0;
+while(i<10){
+    i += 2;
+}
+// 先计算条件，然后判断是否进入循环；
+~~~
+
+- for
+
+~~~ javascript
+// 前测试循环语句， 它具有在执行循环之前，初始化变量，定义循环执行代码的能力
+var count = 10;
+for (var i = 0; i < count; i++){
+    alert(i);
+}
+
+for(;;) // 无限循环
+~~~
+
+- for-in
+
+~~~ javascript
+// 是一种精准的迭代语句，用来枚举对象的属性
+for (property in expression) statement
+
+for (var propName in window){
+    document.write(propName);
+}
+~~~
+
+- lable
+
+- break & continue
+
+~~~ javascript
+// break 语句会立刻退出循环， 强制继续执行循环后面的语句
+// continue 语句 也是立刻推出循环，但是退出后会从循环的顶部继续执行.
+~~~
+
+- with
+
+- switch
+
 ## 函数
 
 ---
