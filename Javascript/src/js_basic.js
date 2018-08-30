@@ -94,9 +94,9 @@ console.log("+'o' is: " + o);
 //if语句
 var i;
 if (i > 25) {
-  console.log('Greater then 25');
+  console.log("Greater then 25");
 } else {
-  console.log('Less or equal to 25');
+  console.log("Less or equal to 25");
 }
 
 // do...while 语句
@@ -107,15 +107,15 @@ if (i > 25) {
 
 // for in 语句
 
-var list = [1,2,3,4,5,6];
-for (var i in list.reverse()){
+var list = [1, 2, 3, 4, 5, 6];
+for (var i in list.reverse()) {
   console.log(list[i]);
 }
 
 // label 语句
 
-start: for (var i = 0; i < 10; i++){
-  console.log(i)
+start: for (var i = 0; i < 10; i++) {
+  console.log(i);
 }
 
 // break & continue.
@@ -130,7 +130,7 @@ for (var index = 1; index < 10; index++) {
 }
 console.log(num);
 
-num=0;
+num = 0;
 for (var index = 1; index < 10; index++) {
   if (index % 5 == 0) {
     continue;
@@ -138,3 +138,23 @@ for (var index = 1; index < 10; index++) {
   num++;
 }
 console.log(num);
+
+///////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////
+// 函数
+
+// 一般写法
+
+function funcName(para1, para2) {
+  console.log("hello world"); // statement.
+}
+
+var strSp =
+  "*****************************引用类型的参数传递********************************";
+console.log(strSp);
+var o = Object();
+console.log(o instanceof Object);
+
+var test_int = 100;
+console.log(typeof test_int);

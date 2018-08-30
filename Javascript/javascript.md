@@ -7,6 +7,8 @@
 - 对象: 常用对象
 - 常用库
 - 严格模式的语法和行为改变
+
+d:\Apps\node-v8.11.3-win-x64\node.exe
 ```
 
 ## 严格模式的行为改变
@@ -59,34 +61,35 @@ a = -num;
 ---
 
 - if 语句
-> 
-~~~ javascript
+  >
+
+```javascript
  if (condition) statement1 else statement2
  // condition 可以是任意表达式，而且结果可以不是布尔值， ECMAScript 会自动调用 Boolean() 转换函数转换为布尔值。
-~~~
+```
 
 - do-while
 
-~~~ javascript
-do{
-    statement;
+```javascript
+do {
+  statement;
 } while (expression);
 // 在对条件表达式求值之前，循环体内的代码至少会被执行一次.
-~~~
+```
 
 - while
 
-~~~ javascript
+```javascript
 var i = 0;
-while(i<10){
-    i += 2;
+while (i < 10) {
+  i += 2;
 }
 // 先计算条件，然后判断是否进入循环；
-~~~
+```
 
 - for
 
-~~~ javascript
+```javascript
 // 前测试循环语句， 它具有在执行循环之前，初始化变量，定义循环执行代码的能力
 var count = 10;
 for (var i = 0; i < count; i++){
@@ -94,27 +97,27 @@ for (var i = 0; i < count; i++){
 }
 
 for(;;) // 无限循环
-~~~
+```
 
 - for-in
 
-~~~ javascript
+```javascript
 // 是一种精准的迭代语句，用来枚举对象的属性
-for (property in expression) statement
+for (property in expression) statement;
 
-for (var propName in window){
-    document.write(propName);
+for (var propName in window) {
+  document.write(propName);
 }
-~~~
+```
 
 - lable
 
 - break & continue
 
-~~~ javascript
+```javascript
 // break 语句会立刻退出循环， 强制继续执行循环后面的语句
 // continue 语句 也是立刻推出循环，但是退出后会从循环的顶部继续执行.
-~~~
+```
 
 - with
 
@@ -126,6 +129,17 @@ for (var propName in window){
 
 ### 函数基础
 
+```javascript
+1. 如果有 `return` 语句， 在执行完 `return` 后，会立即停止并立刻退出， 位于return之后的语句的任何代码，都不会执行.
+
+2. `return` 也可以不返回值， 函数也会直接推出，其实是返回了一个 `undedfined`
+
+3. 关于函数参数
+    函数的类型，个数对函数来说，没有限制
+    其实再函数内部，所有的参数都会形成一个数组，传给函数， 再函数体内，可以通过 `arguments` 获得这个数组
+4. 函数没有重载： 如果定义了同名函数，后一个会覆盖前一个的功能.
+```
+
 ### 函数表达式
 
 - 递归
@@ -136,19 +150,40 @@ for (var propName in window){
 
 ---
 
-## 引用类型
+### 基本类型和引用类型的值
 
----
+    值类型： Undefined, Null, Boolean, Number, String 都是值类型
 
-- Object
-- Array
-- Date
-- RegExp
-- Function
+    引用类型： Object, Array, Data, RegExp, Function
+
+    需要注意的：
+    1 .可以添加属性，方法，也可以改变和删除其属性和方法.
+    2. 复制变量值
+    3. 作为参数， ECMAScript 中所有的参数都是按值传递的，就是说函数外部的值复制给函数内部的参数，就可以值从一个变量复制到另一个变量一样。
+    4. *访问变量有按照值和引用两种方式， 而参数只能按照值.
+
+    5. typeof(var), instanceof(ObjectType):
+
+### 执行环境及作用域
+
+```javascript
+    1. 代码执行时，会创建变量对象的一个 `作用域链`(scrope chain),其用途保证对执行环境有权访问的所有变量和函数有序访问.
+```
+
+当 js 代码执行的时候，会进度不同的执行环境，这些不同的执行环境构成了执行环境栈，
+
+Javascript 中主要存在三种执行环境
+
+- 全局执行环境
+  ```
+  Javascript 默认的执行环境， 通常被默认位 windows 对象，所有的全局变量和函数都作为 windows 对象的属性和方法;
+  ds
+  ```
+- 函数执行环境
+
+- eval() 执行环境
 
 # 面向对象编程
-
----
 
 ## 理解对象
 
