@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS_DOM_DEMO</title>
+</head>
+
+<body>
+    <SCRipt>
+        window.document.write(Date());
+    </SCRipt>
+
+
+
+    <p id="pdemo"></p>
+    <script>
+        document.getElementById('pdemo').innerHTML = "this is dynamic content."
+    </script>
+
+    <hr>
+    <h2>改变 HTML 属性</h2>
+
+    <img id="image" src="smiley.gif">
+    <script>
+        document.getElementById("image").attribute = "landscrape.jpg";
+    </script>
+
+    <hr>
+    <h2>HTML DOM 允许 JavaScript 改变 HTML 元素的样式。</h2>
+    <p id="p2">Hello World!</p>
+    <script>
+        //document.getElementById(id).style.property=new style
+
+        document.getElementById("p2").style.color = "red";
+        document.getElementById("p2").style.fontSize = '40';
+    </script>
+
+    <hr>
+    <h2>HTML DOM 使 JavaScript 有能力对 HTML 事件做出反应</h2>
+    <div id="ents" onmouseout="mOut(this)" onmouseover="mOver(this)">把鼠标一过来</div>
+
+    <style>
+        #ents {
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            text-align: center;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function mOut(obj) {
+            obj.innerHTML = "把鼠标一过来";
+        }
+
+        function mOver(obj) {
+            obj.innerHTML = "谢谢";
+        }
+    </script>
+
+    <xmp style="border:1px solid bule;">
+        <style>
+            #ents {
+                height: 100px;
+                width: 100px;
+                background-color: green;
+                text-align: center;
+                color: white;
+                padding: 10px;
+            }
+        </style>
+        <script>
+            function mOut(obj) {
+                obj.innerHTML = "把鼠标一过来";
+            }
+
+            function mOver(obj) {
+                obj.innerHTML = "谢谢";
+            }
+        </script>
+    </xmp>
+
+</body>
+
+</html>

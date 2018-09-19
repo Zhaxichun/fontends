@@ -87,3 +87,53 @@ Object.defineProperties(book, {
  *  * ************************************************************************************
  *  创建对象.
  */
+
+/*******************
+ * 工厂模式
+ */
+function createPerson(name, age, job) {
+  var o = new Object();
+  o.name = name;
+  o.age = age;
+  o.job = job;
+
+  o.sayName = function() {
+    console.log(this.name);
+  };
+
+  return o;
+}
+
+var p1 = createPerson("FRANK", 20, "planner");
+
+p1.sayName();
+
+/**************
+ * 构造函数模式
+ */
+
+function Person(name, age, job) {
+  this.name = name;
+  this.age = age;
+  this.job = job;
+  this.sayName = function() {
+    console.log(this.name);
+  };
+}
+
+var p2 = new Person("frank2", 36, "planner");
+p2.sayName();
+
+/***************
+ * 原型模式
+ *
+ *  跟构造函数不同的是，所有的新对象都共享属性和方法
+ */
+
+function Person_ProType() {}
+Person_ProType.prototype.name = "Nicholas";
+Person_ProType.prototype.age = 30;
+Person_ProType.prototype.job = "Software En";
+Person_ProType.prototype.SayName = function() {
+  console.log(this.name);
+};

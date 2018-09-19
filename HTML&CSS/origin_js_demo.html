@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #btn {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #main {
+            background-color: #008800;
+            width: 100px;
+            height: 100px;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btn">
+        <button id="wider">变宽</button>
+        <button id="higher">变高</button>
+        <button id="change-color">变色</button>
+        <button id="hide">隐藏</button>
+        <button id="reset">重置</button>
+    </div>
+    <div id="wrap">
+        <div id="main"></div>
+    </div>
+
+
+
+    <script>
+        var btns = document.getElementById('btn');
+        var mainDiv = document.getElementById('main');
+        var newStyle = {
+            width: '200px',
+            height: '300px',
+            backgroundColor: '#880000',
+            display: 'none'
+        }
+
+        function delegateEvent(delElement, targetTag, eventname, handlers) {
+            delElement.addEventListener(eventname, function (event) {
+                var target = event.target;
+                if (target.nodeName.toLowerCase() == targetTag.toLowerCase())
+                    return handlers(event);
+            });
+        }
+
+        function changeStyle(event) {
+            var target = event.target;
+            var id = target.id;
+            switch (id) {
+                case 'wider':
+                    mainDiv.style['width'] = newStyle['width'];
+                    break;
+                case 'higher':
+                    mainDiv.style['height'] = newStyle['height'];
+                    break;
+                case 'change-color':
+                    mainDiv.style['backgroundColor'] = newStyle['backgroundColor'];
+                    break;
+                case 'hide':
+                    mainDiv.style['display'] = newStyle['display'];
+                    break;
+                case 'reset':
+                    mainDiv.style.cssText = '';
+                    break;
+            }
+        }
+        delegateEvent(btns, 'button', 'click', changeStyle);
+    </script>
+</body>
+
+</html>
