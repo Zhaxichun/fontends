@@ -11,6 +11,69 @@
 d:\Apps\node-v8.11.3-win-x64\node.exe
 ```
 
+```
+数据类型
+面向对象
+继承
+闭包
+插件
+作用域
+跨域
+原型链
+模块化
+自定义事件
+内存泄漏
+事件机制
+异步装载回调
+模板引擎
+Json
+AJAX
+```
+
+> 内置对象
+
+```
+基本：
+
+Array, ArrayBuffer
+Boolean
+Date
+Map, WeakMap
+Object
+Number
+RegExp
+String
+Set, WeakSet
+Function
+Math
+Nan
+JSON
+----------------------------------
+
+Atomics
+DataView
+Error, EvalError, InternalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError
+Float32Array, Float64Array, Int16Array, Int32Array, Int8Array,
+Generator, GeneratorFunction
+Infinity
+Intl, Intl.Collator, Intl.DateTimeFormat, Intl.NumberFormat, Intl.PluralRules
+Promise
+Proxy
+Reflect
+SharedArrayBuffer
+Symbol
+WebAssembly
+----------------------------------
+函数
+decodeURI(), decodeURIComponent(), encodeURI(), encodeURIComponenet()
+escape()
+eval()
+isFinite()
+isNaN()
+null
+parseFloat, parseInt, undefined(), uneval()
+```
+
 ## 严格模式的行为改变
 
 >
@@ -59,6 +122,37 @@ a = -num;
 ## 语句
 
 ---
+
+```
+async function **
+block
+break
+class **
+const **
+continue
+debugger **
+default  **
+do...while...
+empty  **
+export  **
+for
+for each...in
+for...in...*
+for...of...*
+function
+if...else...
+import **
+import.meta **
+lable   **
+let
+return
+switch
+throw
+try...catch...
+var
+while
+with **: 不推荐使用
+```
 
 - if 语句
   >
@@ -187,8 +281,6 @@ Javascript 中主要存在三种执行环境
 
 Javascript 的 变量对象
 
-
-
 #### 作用域
 
 - 局部作用域:局部变量的优先级高于全局变量。
@@ -196,13 +288,7 @@ Javascript 的 变量对象
       1. 函数体内用var声明的变量具有局部作用域，成为局部变量
       2. 函数的参数也具有局部作用域
 
-**JavaScript是函数作用域（function scope），没有块级作用域。无论函数体内的变量在什么地方声明，对整个函数都是可见的，即JavaScript函数里声明的所有变量都被提前到函数体的顶部，只是提前变量声明，变量的赋值还是保留在原位置。**
-
-
-
-
-
-
+**JavaScript 是函数作用域（function scope），没有块级作用域。无论函数体内的变量在什么地方声明，对整个函数都是可见的，即 JavaScript 函数里声明的所有变量都被提前到函数体的顶部，只是提前变量声明，变量的赋值还是保留在原位置。**
 
 # 面向对象编程
 
@@ -211,3 +297,28 @@ Javascript 的 变量对象
 ## 创建对象
 
 ## 继承
+
+## 事件
+
+```Javascript
+// 键盘事件
+onkeypress
+onkeyup
+onkeydown
+
+// 焦点事件
+onfocusout
+onfocus
+onabort  // 图片下载被打断时
+onblur   // 元素失去焦点时
+onclick
+ondbclick
+onerror  // 加载文件或图片发生错误
+// 鼠标事件
+onmousedown
+onmousemove
+onmouseout
+onmouseover
+onmouseup
+onunload
+```

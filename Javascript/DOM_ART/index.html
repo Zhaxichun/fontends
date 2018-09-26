@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Album</title>
+</head>
+
+<body>
+    <h1>SnapShots.</h1>
+    <ul>
+        <li>
+            <a href="http://pic181.nipic.com/file/20180913/9564852_190111553000_2.jpg" onclick="showPic(this); return false;">Fireworks</a>
+        </li>
+        <li>
+            <a href="http://pic182.nipic.com/file/20180919/9564852_083038548000_2.jpg" onclick="showPic(this); return false;">coffee</a>
+        </li>
+        <li>
+            <a href="http://pic182.nipic.com/file/20180919/9564852_083038490000_2.jpg" onclick="showPic(this); return false;">Ross</a>
+        </li>
+        <li>
+            <a href="http://pic182.nipic.com/file/20180919/9564852_083038490000_2.jpg" onclick="showPic(this); return false;"> Big Be.</a>
+        </li>
+    </ul>
+
+    <img id="placeholder" src="" alt="">
+    <script>
+        function showPic(pict) {
+            var source = pict.getAttribute("href");
+            var placeholder = document.getElementById("placeholder");
+            placeholder.setAttribute("src", source);
+        }
+    </script>
+</body>
+
+</html>
